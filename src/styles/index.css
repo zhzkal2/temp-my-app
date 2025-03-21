@@ -1,0 +1,19 @@
+/* 기본 색상 변수 설정 */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* 폰트 설정 */
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+/* 기본 스타일 설정 */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
