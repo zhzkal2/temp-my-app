@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
+import MyMap from "../Components/MyMap";
 import "../styles/pages/home/Home.css";
 import "../styles/pages/home/SubTitle.css";
 import "../styles/pages/Home/Link.css";
@@ -78,7 +79,7 @@ function Home() {
                 〒105-0001 港区虎ノ門2-7-16 <br className="lg-hidden" />
                 エグゼクティブタワー虎ノ門 504
               </address>
-              {/* <MyMap className="mx-auto mt-1 h-[80%] w-[90%] items-center justify-center lg:mt-3 lg:h-[100%] lg:w-[100%]" /> */}
+              <MyMap className="article-section__map " />
             </article>
 
             {/* 2 Col */}
