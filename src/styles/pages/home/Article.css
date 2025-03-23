@@ -34,6 +34,7 @@
 
 /* Flex_Item */
 .article-section__item {
+  padding: 1rem;
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(216, 216, 216, 0.75);
 }
@@ -42,7 +43,6 @@
 .article-section__item--1 {
   height: 23.75rem;
   background-color: white;
-  padding: 1rem;
 }
 
 .article-section__item--1 .article-section__title {
@@ -244,7 +244,6 @@
 
 .article-section__item--6 {
   background: #e9bc06;
-  padding: 1rem;
 }
 
 .article-section__item--6 .article-section__title {
@@ -315,7 +314,7 @@
   }
 
   .article-section__item--2 .article-section__info {
-    margin-top: 1.75rem;
+    margin-top: 1rem;
   }
   .article-section__item--3 .article-section__title-contents {
     grid-template-columns: repeat(4, minmax(0, 1fr));

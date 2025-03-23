@@ -99,7 +99,6 @@ function Home() {
                 </span>
 
                 <div className=" article-section__beer">
-                  {/* test text 부분과 교차 검증 필요 */}
                   <span className="article-section__test-text">
                     83
                     <span className="article-section__text ">件</span>

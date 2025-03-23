@@ -13,34 +13,6 @@
   letter-spacing: 0.225rem;
 }
 
-@media (min-width: 40rem) {
-  .section-link__text {
-    font-size: 1.25rem;
-  }
-}
-
-@media (min-width: 48rem) {
-  .section-link__text {
-    font-size: 1.5rem;
-  }
-  .section-link__button-text {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 64rem) {
-  .section-link__text {
-    font-size: 2.25rem;
-  }
-  .section-link {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-  }
-  .section-link__button-text {
-    font-size: 1.0625rem;
-  }
-}
-
 .section-link__button {
   margin-top: 2rem;
   display: flex;
@@ -73,4 +45,32 @@
 
 .section-link__button-arrow {
   margin-left: auto;
+}
+
+@media (min-width: 40rem) {
+  .section-link__text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .section-link__text {
+    font-size: 1.5rem;
+  }
+  .section-link__button-text {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .section-link__text {
+    font-size: 2.25rem;
+  }
+  .section-link {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .section-link__button-text {
+    font-size: 1.0625rem;
+  }
 }
