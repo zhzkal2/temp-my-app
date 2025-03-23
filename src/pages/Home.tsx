@@ -298,15 +298,15 @@ function Home() {
           </p>
           <Link to="https://ankh-systems.co.jp/">
             <div className="section-link__button">
-              <div className="section-link-button__box">
+              <div className="section-link__button-box">
                 <img
                   src="/green_logo@2x.png"
                   alt="AnkhSystems"
                   width={328}
                   height={36}
-                  className="section-link-button-box__img"
+                  className="section-link__button-box-img"
                 />
-                <p className="hidden sm-block section-link-button-box__buttonText">
+                <p className="hidden sm-block section-link__button-text">
                   株式会社アンクシステムズ
                   <br className="hidden sm-block lg-hidden" />
                   コーポレートサイトへ
@@ -317,7 +317,7 @@ function Home() {
                 alt="arrow"
                 width={6}
                 height={11}
-                className="section-link-button__arrow"
+                className="section-link__button-arrow "
               />
             </div>
           </Link>
