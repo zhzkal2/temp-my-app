@@ -4,7 +4,6 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  margin-top: 1rem;
   max-width: 62.5rem;
   flex-direction: column;
   align-items: center;
@@ -12,23 +11,28 @@
   gap: 1.25rem;
 }
 
-@media (min-width: 1024px) {
-  .article-section {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
-
 .article-section__group {
   display: flex;
   width: 100%;
-  max-width: 30.625rem;
+  max-width: 31.25rem;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-/* TODO : item max height vs height */
+@media (min-width: 64rem) {
+  .article-section {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .article-section__group {
+    max-width: 30.625rem;
+  }
+}
 
+/* TODO : .article-section__item--4 .article-section__title */
+/* 이러한 방식으로 적용할 필요성 */
+
+/* Flex_Item */
 .article-section__item {
   box-sizing: border-box;
   box-shadow: 0px 1px 1px rgba(216, 216, 216, 0.75);
@@ -70,33 +74,10 @@
   justify-content: center;
 }
 
-@media (min-width: 64rem) {
-  .article-section__item--1 .article-section__title-text {
-    font-size: 1.375rem;
-  }
-  .article-section__item--1 .article-section__address {
-    font-size: 0.75rem;
-  }
-  .article-section__item--1 .article-section__map {
-    margin-top: 0.75rem;
-    height: 100%;
-    width: 100%;
-  }
-}
-
 .article-section__item--2 {
   height: 19.375rem;
   background-color: #dc5e48;
   padding: 1rem;
-}
-
-@media (min-width: 64rem) {
-  .article-section__item--2 {
-    padding-top: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
 }
 
 .article-section__item--2 .article-section__title {
@@ -152,24 +133,12 @@
   color: white;
 }
 
-@media (min-width: 64rem) {
-  .article-section__item--2 .article-section__test-text {
-    gap: 0.5rem;
-  }
-}
-
 .article-section__item--2 .article-section__info {
   margin-top: 1.5rem;
   text-align: right;
   font-size: 0.563rem;
   color: white;
   letter-spacing: 0.028rem;
-}
-
-@media (min-width: 64rem) {
-  .article-section__item--2 .article-section__info {
-    margin-top: 1.75rem;
-  }
 }
 
 .article-section__item--3 {
@@ -197,16 +166,6 @@
   padding-top: 1.25rem;
 }
 
-@media (min-width: 64rem) {
-  .article-section__item--3 .article-section__title-contents {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-  }
-  .article-section__item--3 {
-    max-height: 25rem;
-  }
-}
-
 .article-section__item--3 .article-section__title-main {
   height: 100%;
   width: 100%;
@@ -228,14 +187,6 @@
   background-color: #846ab4;
 }
 
-@media (min-width: 64rem) {
-  .article-section__item--4 {
-    height: 13.75rem;
-  }
-}
-/* .article-section__item--4 .article-section__title */
-/* 이러한 방식으로 적용할 필요성 */
-
 .article-section__item--4 .article-section__title {
   margin-bottom: 0.5rem;
   display: flex;
@@ -249,11 +200,6 @@
   font-size: 0.95rem;
   color: white;
 }
-@media (min-width: 64rem) {
-  .article-section__item--4 .article-section__title-text {
-    font-size: 1.375rem;
-  }
-}
 
 .article-section__item--4 .article-section__contents {
   margin-inline: auto;
@@ -262,105 +208,158 @@
   justify-content: center;
   height: auto;
   width: 100%;
-  max-width: 24.0625rem; /* rem으로 변경필요 */
+  max-width: 24.0625rem;
   padding-top: 2rem;
   padding-bottom: 1rem;
 }
 
+.article-section__item--5 {
+  background-color: white;
+  padding: 1.5rem;
+}
 
-.article-section__item--5{
-    background-color: white;
-    padding: 1.5rem;
+.article-section__item--5 .article-section__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.article-section__item--5 .article-section__title-text {
+  font-size: 1.125rem;
+}
 
+.article-section__item--5 .article-section__contents-img {
+  margin-inline: auto;
+  padding-top: 1rem;
+  width: 100%;
+}
+.article-section__item--5 .article-section__contents-text {
+  display: block;
+  padding-top: 1rem;
+  font-size: 0.675rem;
+  line-height: 1.25rem;
+  letter-spacing: 0rem;
+  margin: 0;
+}
+
+.article-section__item--6 {
+  background: #e9bc06;
+  padding: 1rem;
+}
+
+.article-section__item--6 .article-section__title {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1rem;
+}
+
+.article-section__item--6 .article-section__contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+}
+
+.article-section__item--6 .article-section__contents-img {
+  margin-inline: auto;
+}
+
+.article-section__item--6 .article-section__contents-container {
+  text-align: center;
+}
+
+.article-section__item--6 .article-section__contents-text1 {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: -0.028125rem;
+  color: white;
+}
+
+.article-section__item--6 .article-section__contents-text2 {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.725rem;
+  letter-spacing: -0.01875rem;
+  color: white;
+}
+
+@media (min-width: 30rem) {
+  .article-section__item--6 .article-section__contents-text1 {
+    font-size: 1.125rem;
+  }
 }
 
 @media (min-width: 64rem) {
-    .article-section__item--5 {
-      height: 33.125rem;
-    }
+  .article-section__item--1 .article-section__title-text {
+    font-size: 1.375rem;
   }
-
-  .article-section__item--5 .article-section__title {
-    display: flex;
-    align-items: center;
+  .article-section__item--1 .article-section__address {
+    font-size: 0.75rem;
+  }
+  .article-section__item--1 .article-section__map {
+    margin-top: 0.75rem;
+    height: 100%;
+    width: 100%;
+  }
+  .article-section__item--2 {
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .article-section__item--2 .article-section__test-text {
     gap: 0.5rem;
   }
 
+  .article-section__item--2 .article-section__info {
+    margin-top: 1.75rem;
+  }
+  .article-section__item--3 .article-section__title-contents {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+  .article-section__item--3 {
+    max-height: 25rem;
+  }
+  .article-section__item--4 {
+    height: 13.75rem;
+  }
+  .article-section__item--4 .article-section__title-text {
+    font-size: 1.375rem;
+  }
+  .article-section__item--5 {
+    height: 33.125rem;
+  }
   .article-section__item--5 .article-section__title-text {
-    font-size: 1.125rem;
-
-  }
-
-  @media (min-width: 64rem) {
-    .article-section__item--5 .article-section__title-text  {
-      font-size: 1.375rem;
-    }
-  }
-
-  .article-section__item--5 .article-section__contents-img {
-    margin-inline: auto;
-    padding-top: 1rem;
-
+    font-size: 1.375rem;
   }
   .article-section__item--5 .article-section__contents-text {
-    display: block;
-    padding-top: 1rem;
-    font-size: 0.675rem;
-    line-height: 1.25rem;
-    letter-spacing: 0rem;
-    margin: 0;
-    
-
+    font-size: 0.8rem;
   }
-
-  @media (min-width: 64rem) {
-    .article-section__item--5 .article-section__contents-text {
-      font-size: 0.8rem;
-    }
+  .article-section__item--6 {
+    height: 21.25rem;
   }
-
-.article-section__item--6{
-background: #e9bc06;    
-padding: 1rem;
+  .article-section__item--6 .article-section__contents {
+    flex-direction: row;
+    align-items: start;
+  }
+  .article-section__item--6 .article-section__contents-img {
+    margin-inline: 0;
+  }
+  .article-section__item--6 .article-section__contents-container {
+    text-align: left;
+  }
+  .article-section__item--6 .article-section__contents-text2 {
+    font-size: 0.7rem;
+  }
 }
 
-@media (min-width: 64rem) {
-    .article-section__item--6 {
-      height: 21.25rem;
-    }
-    .article-section__item--6 .article-section__contents{
-        flex-direction: col;
-        align-items: start;
-    }
-    .article-section__item--6 .article-section__contents-text{
-        text-align: left;
-    }
+@media (min-width: 80rem) {
+  .article-section__item--6 .article-section__contents-text2 {
+    margin-top: 0rem;
+    font-size: 0.75rem;
   }
-
-
-  .article-section__item--6 .article-section__title {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 1rem;
-  }
-    
-  .article-section__item--6 .article-section__contents{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding-top: 1.5rem;
-  }
-
-  .article-section__item--6 .article-section__contents-img{
-    margin-inline: auto;  
-  }
-
-  .article-section__item--6 .article-section__contents-text{
-    text-align: center;
-
-  }
-  
+}

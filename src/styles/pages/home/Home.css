@@ -7,15 +7,37 @@ main {
   align-items: center;
   justify-content: center;
   background-color: #e5e7eb;
+  gap: 1.25rem;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
 }
 
 .hidden {
   display: none;
 }
 
+.block {
+  display: block;
+}
+
+@media (min-width: 30rem) {
+  .xs-hidden {
+    display: none;
+  }
+  .xs-block {
+    display: block;
+  }
+}
+
 @media (min-width: 40rem) {
   .sm-hidden {
     display: none;
+  }
+  .sm-block {
+    display: block;
   }
 }
 
@@ -34,10 +56,16 @@ main {
   .lg-hidden {
     display: none;
   }
+  .lg-block {
+    display: block;
+  }
 }
 
 @media (min-width: 80rem) {
   .xl-hidden {
     display: none;
+  }
+  .xl-block {
+    display: block;
   }
 }
