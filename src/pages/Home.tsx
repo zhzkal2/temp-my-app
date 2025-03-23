@@ -10,7 +10,6 @@ import "../styles/pages/home/Article.css";
 
 import "../styles/pages/home/Test.css";
 
-
 function Home() {
   return (
     <>
@@ -87,120 +86,101 @@ function Home() {
 
             {/* 2 Col */}
             <article className="article-section__item article-section__item--2">
-            
-                <img
-                  src="/title@2x.png"
-                  alt="drunk"
-                  width={307}
-                  height={70}
-                  className="article-section__title "
-                />
-                <div className="article-section__container mt-6 flex flex-col gap-1">
-                  <span className="article-section__subtitle text-[0.75rem] leading-[1.0625rem] text-white">
-                    始発まで営業している居酒屋
+              <img
+                src="/title@2x.png"
+                alt="drunk"
+                width={307}
+                height={70}
+                className="article-section__title "
+              />
+              <div className="article-section__container mt-6 flex flex-col gap-1">
+                <span className="article-section__subtitle text-[0.75rem] leading-[1.0625rem] text-white">
+                  始発まで営業している居酒屋
+                </span>
+
+                <div className=" article-section__beer">
+                  {/* test text 부분과 교차 검증 필요 */}
+                  <span className="article-section__text">
+                    83
+                    <span className="article-section__text ">件</span>
                   </span>
 
-                  <div className=" article-section__beer">
-                    {/* test text 부분과 교차 검증 필요 */}
-                    <span className="article-section__text">
-                      83
-                      <span className="article-section__text ">
-                        件
-                      </span>
+                  <img
+                    src="/Beer@2x.png"
+                    alt="beer"
+                    width={350}
+                    height={35}
+                    className="article-section__img block h-[80%] w-[80%] max-w-[350px]"
+                  />
+                </div>
+
+                <span className="article-section__subtitle mt-6 text-[0.75rem] tracking-[0.028rem] text-white">
+                  始発まで営業しているラーメン屋
+                </span>
+                <div className="article-section__beer flex flex-row items-end justify-between">
+                  <span className="article-section__test-text text-4xl text-white">
+                    9
+                    <span className="lg-ml-1 ml-1 text-[0.875rem] text-white">
+                      件
                     </span>
-
-                    
-                    <img
-                      src="/Beer@2x.png"
-                      alt="beer"
-                      width={350}
-                      height={35}
-                      className="article-section__img block h-[80%] w-[80%] max-w-[350px]"
-                    />
-                  </div>
-
-                  <span className="article-section__subtitle mt-6 text-[0.75rem] tracking-[0.028rem] text-white">
-                    始発まで営業しているラーメン屋
                   </span>
-                  <div className="article-section__beer flex flex-row items-end justify-between">
 
-                      <span className="article-section__test-text text-4xl text-white">
-                        9
-                        <span className="lg-ml-1 ml-1 text-[0.875rem] text-white">
-                          件
-                        </span>
-                      </span>
-
-
-                    <img
-                      src="/Ramen@2x.png"
-                      alt="ramen"
-                      width={347}
-                      height={25}
-                      className="article-section__img mx-auto h-[80%] w-[80%] max-w-[347px]"
-                    />
-                  </div>
+                  <img
+                    src="/Ramen@2x.png"
+                    alt="ramen"
+                    width={347}
+                    height={25}
+                    className="article-section__img mx-auto h-[80%] w-[80%] max-w-[347px]"
+                  />
                 </div>
-                <div className="article-section__info mt-6 text-right text-[0.563rem] tracking-[0.028rem] text-[#FFFFFF] lg:mt-7">
-                  ※虎ノ門駅の半径1km以内
-                </div>
-              
+              </div>
+              <div className="article-section__info mt-6 text-right text-[0.563rem] tracking-[0.028rem] text-[#FFFFFF] lg:mt-7">
+                ※虎ノ門駅の半径1km以内
+              </div>
             </article>
 
             {/* 3 Col */}
-            <article className="article-section__item article-section__item--3 bg-white shadow-[0px_1px_1px_#D8D8D8BF] lg:h-[25rem]">
-              
-                <div className="article-section__title flex items-center gap-2">
-                  <img
-                    src="/camera@2x.png"
-                    alt="camera"
-                    width={36}
-                    height={27}
-                  />
-                  <span className="article-section__title-text text-[1.375rem] leading-[1.063rem] tracking-[-0.01rem]">
-                    フォトギャラリー
-                  </span>
-                </div>
+            <article className="article-section__item article-section__item--3 ">
+              <div className="article-section__title">
+                <img src="/camera@2x.png" alt="camera" width={36} height={27} />
+                <span className="article-section__title-text ">
+                  フォトギャラリー
+                </span>
+              </div>
 
-                <div className="article-section__title-contents grid grid-cols-3 grid-rows-4 pt-5 lg:grid-cols-4 lg:grid-rows-3">
+              <div className="article-section__title-contents ">
+                <img
+                  src="/photo1@2x.png"
+                  alt="camera"
+                  width={338}
+                  height={310}
+                  className="article-section__title-main "
+                />
 
-                    <img
-                      src="/photo1@2x.png"
-                      alt="camera"
-                      width={338}
-                      height={310}
-                      className="article-section__title-main h-full w-full"
-                    />
+                <img
+                  src="/photo2@2x.png"
+                  alt="camera"
+                  width={112}
+                  height={103}
+                  className="article-section__title-sub"
+                />
 
+                <img
+                  src="/photo3@2x.png"
+                  alt="camera"
+                  width={112}
+                  height={103}
+                  className="article-section__title-sub"
+                />
 
-
-                    <img
-                      src="/photo2@2x.png"
-                      alt="camera"
-                      width={112}
-                      height={103}
-                      className="article-section__title-sub h-full w-full"
-                    />
-
-
-
-                    <img
-                      src="/photo3@2x.png"
-                      alt="camera"
-                      width={112}
-                      height={103}
-                      className="article-section__title-sub h-full w-full"
-                    />
-
-                    <img
-                      src="/photo4@2x.png"
-                      alt="camera"
-                      width={112}
-                      height={103}
-                      className="article-section__title-sub h-full w-full"
-                    />
-                </div>
-              
+                <img
+                  src="/photo4@2x.png"
+                  alt="camera"
+                  width={112}
+                  height={103}
+                  className="article-section__title-sub "
+                />
+              </div>
             </article>
           </section>
 
@@ -344,56 +324,53 @@ function Home() {
               />
             </div>
           </Link>
-        </section>  
-
+        </section>
 
         <section className="test-section  relative mx-auto mt-4 flex w-full max-w-[1000px] flex-wrap justify-center">
           {/* /* 1 Col /} */}
           <article className="article-section__item article-section__item--4 ">
-              <div className="article-section__title  ">
-                <img
-                  src="/iPhone@2x.png"
-                  alt="iphone_icon"
-                  width={19}
-                  height={26}
-                />
-                <span className="article-section__title-text ">
-                  電話・FAX番号が変わりました
-                </span>
-              </div>
-
+            <div className="article-section__title  ">
               <img
-                src="/tel-fax@2x.png"
-                alt="toranomon"
-                width={385}
-                height={80}
-                className="article-section__contents"
+                src="/iPhone@2x.png"
+                alt="iphone_icon"
+                width={19}
+                height={26}
               />
-            </article>
-            <article className="article-section__item article-section__item--4 ">
-              <div className="article-section__title  ">
-                <img
-                  src="/iPhone@2x.png"
-                  alt="iphone_icon"
-                  width={19}
-                  height={26}
-                />
-                <span className="article-section__title-text ">
-                  電話・FAX番号が変わりました
-                </span>
-              </div>
+              <span className="article-section__title-text ">
+                電話・FAX番号が変わりました
+              </span>
+            </div>
 
+            <img
+              src="/tel-fax@2x.png"
+              alt="toranomon"
+              width={385}
+              height={80}
+              className="article-section__contents"
+            />
+          </article>
+          <article className="article-section__item article-section__item--4 ">
+            <div className="article-section__title  ">
               <img
-                src="/tel-fax@2x.png"
-                alt="toranomon"
-                width={385}
-                height={80}
-                className="article-section__contents"
+                src="/iPhone@2x.png"
+                alt="iphone_icon"
+                width={19}
+                height={26}
               />
-            </article>
+              <span className="article-section__title-text ">
+                電話・FAX番号が変わりました
+              </span>
+            </div>
 
+            <img
+              src="/tel-fax@2x.png"
+              alt="toranomon"
+              width={385}
+              height={80}
+              className="article-section__contents"
+            />
+          </article>
 
-            
           {/* {/ 2 Col /} */}
           <article className="blue flex max-w-[500px] flex-shrink-1 grow-0 basis-[500px] bg-[#DC5E48] shadow-[0px_1px1px#D8D8D8BF]">
             {/* {/ content /} */}
@@ -409,14 +386,6 @@ function Home() {
             {/* {/ content/}  */}
           </article>
         </section>
-
-
-        
-
-
-
-
-
       </main>
       <Footer />
     </>
