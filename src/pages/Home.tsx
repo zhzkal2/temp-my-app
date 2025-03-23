@@ -209,19 +209,17 @@ function Home() {
             </article>
 
             {/* 5 col */}
-            <article className="bg-white p-6 shadow-[0px_1px_1px_#D8D8D8BF] lg:h-[33.125rem]">
-              <div className=" ">
-                <div className="flex items-center gap-2">
+            <article className="article-section__item article-section__item--5 bg-white p-6 shadow-[0px_1px_1px_#D8D8D8BF] lg:h-[33.125rem]">
+                <div className="article-section__title flex items-center gap-2">
                   <img
                     src="/Business-Graduation-cap-icon@2x.png"
                     alt="Graduation_cap"
                     width={44}
                     height={30}
-                    className=" "
                   />
-                  <h3 className="text-[1.125rem] lg:text-[1.375rem]">
+                  <span className="article-section__title-text text-[1.125rem] lg:text-[1.375rem]">
                     虎ノ門の由来って？
-                  </h3>
+                  </span>
                 </div>
 
                 <img
@@ -229,42 +227,42 @@ function Home() {
                   alt="photo"
                   width={450}
                   height={320}
-                  className="mx-auto pt-4"
+                  className="article-section__contents-img mx-auto pt-4"
                 />
-                <p className="block pt-8 text-[0.675rem] leading-[1.25rem] lg:text-[0.8rem]">
+                <span className="article-section__contents-text block pt-8 text-[0.675rem] leading-[1.25rem] lg:text-[0.8rem]">
                   虎ノ門駅を出てすぐ、
-                  <br className="lg:hidden" />{" "}
+                  <br className="lg-hidden" />{" "}
                   虎ノ門交差点付近に鎮座するこの銅像。
                   <br />
                   これ、なんだかお分かりでしょうか？ <br />
                   そう、猫です。というのは嘘で予想どおり、
-                  <br className="lg:hidden" /> 虎です(笑) <br />
+                  <br className="lg-hidden" /> 虎です(笑) <br />
                   虎ノ門だけに虎の銅像なんです！ <br />
                   そもそもどうして、
-                  <br className="lg:hidden" />{" "}
+                  <br className="lg-hidden" />{" "}
                   ここの地名が「虎ノ門」なのか気になりませんか？
-                </p>
-              </div>
+                </span>
+              
             </article>
             {/* 6 col */}
-            <article className="bg-[#E9BC06] shadow-[0px_1px_1px_#D8D8D8BF] lg:h-[21.25rem]">
-              <div className="pt-2 pr-4 pb-4 pl-4">
+            <article className="article-section__item article-section__item--6">
+         
                 <img
                   src="/Pick up foods@2x.png"
                   alt="food"
                   width={253}
                   height={42}
-                  className="mx-auto pt-4"
+                  className="article-section__title"
                 />
-                <div className="flex flex-col items-center justify-center gap-4 pt-6 lg:flex-row lg:items-start">
+                <div className="article-section__contents flex flex-col items-center justify-center gap-4 pt-6 lg:flex-row lg:items-start">
                   <img
                     src="/ramen-photo@2x.png"
                     alt="ramen-photo"
                     width={161}
                     height={204}
-                    className="lg-mx-0 mx-auto"
+                    className="article-section__contents-img mx-auto"
                   />
-                  <p className="text-center lg:text-left">
+                  <span className="article-section__contents-text text-center lg:text-left">
                     <span className="block text-[1.125rem] tracking-[-0.028125rem] text-white">
                       めん徳　二代目つじ田　新橋店
                       <br />
@@ -286,9 +284,9 @@ function Home() {
                       <br className="lg:hidden" />
                       頻繁に出没しそうな予感がして います。
                     </span>
-                  </p>
+                  </span>
                 </div>
-              </div>
+              
             </article>
           </section>
         </section>

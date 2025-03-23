@@ -35,3 +35,9 @@ main {
     display: none;
   }
 }
+
+@media (min-width: 80rem) {
+  .xl-hidden {
+    display: none;
+  }
+}
