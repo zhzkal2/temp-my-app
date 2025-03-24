@@ -1,16 +1,249 @@
+import React, { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import MyMap from "../Components/MyMap";
+import Article from "../Components/Article";
+import Modal from "../Components/Modal";
+
 import "../styles/pages/home/Home.css";
 import "../styles/pages/home/SubTitle.css";
 import "../styles/pages/Home/Link.css";
 import "../styles/pages/home/Title.css";
 import "../styles/pages/home/Article.css";
 
-import "../styles/pages/home/Test.css";
-
 function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+
+  const openModal = useCallback((content: React.ReactNode) => {
+    setModalContent(content);
+    setIsModalOpen(true);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setIsModalOpen(false);
+    setModalContent(null);
+  }, []);
+
+  const article1Content = (
+    <article className="article-section__item article-section__item--1">
+      <div className="article-section__title">
+        <img
+          src="/Location@2x.png"
+          alt="location_icon"
+          width={30}
+          height={30}
+        />
+        <span className="article-section__title-text ">
+          新東京オフィスの地図はこちら
+        </span>
+      </div>
+      <address className="article-section__address">
+        〒105-0001 港区虎ノ門2-7-16
+        <br className="lg-hidden" />
+        エグゼクティブタワー虎ノ門 504
+      </address>
+      <MyMap className="article-section__map " />
+    </article>
+  );
+
+  const article2Content = (
+    <article className="article-section__item article-section__item--2">
+      <img
+        src="/title@2x.png"
+        alt="drunk"
+        width={307}
+        height={70}
+        className="article-section__title "
+      />
+      {/* container */}
+      <div className="article-section__contents">
+        <span className="article-section__subtitle--1">
+          始発まで営業している居酒屋
+        </span>
+
+        <div className=" article-section__container">
+          <span className="article-section__text">
+            83
+            <span className="article-section__unit ">件</span>
+          </span>
+
+          <img
+            src="/Beer@2x.png"
+            alt="beer"
+            width={350}
+            height={35}
+            className="article-section__img "
+          />
+        </div>
+
+        <span className="article-section__subtitle--2">
+          始発まで営業しているラーメン屋
+        </span>
+
+        <div className="article-section__container ">
+          <span className="article-section__text ">
+            9<span className="article-section__unit ">件</span>
+          </span>
+
+          <img
+            src="/Ramen@2x.png"
+            alt="ramen"
+            width={347}
+            height={25}
+            className="article-section__img"
+          />
+        </div>
+      </div>
+      <div className="article-section__info ">※虎ノ門駅の半径1km以内</div>
+    </article>
+  );
+
+  const article3Content = (
+    <article className="article-section__item article-section__item--3 ">
+      <div className="article-section__title">
+        <img src="/camera@2x.png" alt="camera" width={36} height={27} />
+        <span className="article-section__title-text ">フォトギャラリー</span>
+      </div>
+
+      <div className="article-section__title-contents ">
+        <img
+          src="/photo1@2x.png"
+          alt="camera"
+          width={338}
+          height={310}
+          className="article-section__title-main "
+        />
+
+        <img
+          src="/photo2@2x.png"
+          alt="camera"
+          width={112}
+          height={103}
+          className="article-section__title-sub"
+        />
+
+        <img
+          src="/photo3@2x.png"
+          alt="camera"
+          width={112}
+          height={103}
+          className="article-section__title-sub"
+        />
+
+        <img
+          src="/photo4@2x.png"
+          alt="camera"
+          width={112}
+          height={103}
+          className="article-section__title-sub "
+        />
+      </div>
+    </article>
+  );
+
+  const article4Content = (
+    <article className="article-section__item article-section__item--4 ">
+      <div className="article-section__title  ">
+        <img src="/iPhone@2x.png" alt="iphone_icon" width={19} height={26} />
+        <span className="article-section__title-text ">
+          電話・FAX番号が変わりました
+        </span>
+      </div>
+
+      <img
+        src="/tel-fax@2x.png"
+        alt="toranomon"
+        width={385}
+        height={80}
+        className="article-section__contents"
+      />
+    </article>
+  );
+
+  const article5Content = (
+    <article className="article-section__item article-section__item--5 ">
+      <div className="article-section__title flex items-center">
+        <img
+          src="/Business-Graduation-cap-icon@2x.png"
+          alt="Graduation_cap"
+          width={44}
+          height={30}
+        />
+        <span className="article-section__title-text">虎ノ門の由来って？</span>
+      </div>
+
+      <img
+        src="/photo@2x.png"
+        alt="photo"
+        width={450}
+        height={320}
+        className="article-section__contents-img "
+      />
+      <span className="article-section__contents-text">
+        虎ノ門駅を出てすぐ、
+        <br className="lg-hidden" />
+        虎ノ門交差点付近に鎮座するこの銅像。
+        <br />
+        これ、なんだかお分かりでしょうか？ <br />
+        そう、猫です。というのは嘘で予想どおり、
+        <br className="lg-hidden" /> 虎です(笑) <br />
+        虎ノ門だけに虎の銅像なんです！ <br />
+        そもそもどうして、
+        <br className="lg-hidden" />
+        ここの地名が「虎ノ門」なのか気になりませんか？
+      </span>
+    </article>
+  );
+
+  const article6Content = (
+    <article className="article-section__item article-section__item--6">
+      <img
+        src="/Pick up foods@2x.png"
+        alt="food"
+        width={253}
+        height={42}
+        className="article-section__title"
+      />
+      <div className="article-section__contents">
+        <img
+          src="/ramen-photo@2x.png"
+          alt="ramen-photo"
+          width={161}
+          height={204}
+          className="article-section__contents-img"
+        />
+        <div className="article-section__contents-container ">
+          <span className="article-section__contents-text1">
+            めん徳　二代目つじ田　
+            <br className="block md-hidden" />
+            新橋店
+            <br className="hidden xl-block" />
+            <br />
+          </span>
+          <span className="article-section__contents-text2">
+            1月24日にオープンしたばかりのラーメン店。
+            <br />
+            看板メニューのつけ麺は3段階に進化します。 <br />
+            最初はそのまま、途中ですだちを絞って爽やかに、 <br />
+            最後は黒七味をかけてピリっとした風味を楽しんだ <br />
+            ところで美味しく完食…。といった流れです。
+            <br className="hidden xl-block" />
+            <br />
+          </span>
+
+          <span className="article-section__contents-text2">
+            弊社スタッフ達も、
+            <br />
+            頻繁に出没しそうな予感がして います。
+          </span>
+        </div>
+      </div>
+    </article>
+  );
+
   return (
     <>
       {/* Header */}
@@ -62,230 +295,50 @@ function Home() {
         </section>
 
         {/* Article Section */}
+
         <section className="article-section">
           <section className="article-section__group">
             {/* 1 Col */}
-            <article className="article-section__item article-section__item--1">
-              <div className="article-section__title">
-                <img
-                  src="/Location@2x.png"
-                  alt="location_icon"
-                  width={30}
-                  height={30}
-                />
-                <span className="article-section__title-text ">
-                  新東京オフィスの地図はこちら
-                </span>
-              </div>
-              <address className="article-section__address">
-                〒105-0001 港区虎ノ門2-7-16 <br className="lg-hidden" />
-                エグゼクティブタワー虎ノ門 504
-              </address>
-              <MyMap className="article-section__map " />
-            </article>
+            <Article
+              title="新東京オフィスの地図はこちら"
+              content={article1Content}
+              onOpenModal={openModal}
+            />
 
             {/* 2 Col */}
-            <article className="article-section__item article-section__item--2">
-              <img
-                src="/title@2x.png"
-                alt="drunk"
-                width={307}
-                height={70}
-                className="article-section__title "
-              />
-              <div className="article-section__container mt-6 flex flex-col gap-1">
-                <span className="article-section__subtitle text-[0.75rem] leading-[1.0625rem] text-white">
-                  始発まで営業している居酒屋
-                </span>
-
-                <div className=" article-section__beer">
-                  <span className="article-section__test-text">
-                    83
-                    <span className="article-section__text ">件</span>
-                  </span>
-
-                  <img
-                    src="/Beer@2x.png"
-                    alt="beer"
-                    width={350}
-                    height={35}
-                    className="article-section__img block h-[80%] w-[80%] max-w-[350px]"
-                  />
-                </div>
-
-                <span className="article-section__subtitle mt-6 text-[0.75rem] tracking-[0.028rem] text-white">
-                  始発まで営業しているラーメン屋
-                </span>
-                <div className="article-section__beer flex flex-row items-end justify-between">
-                  <span className="article-section__test-text text-4xl text-white">
-                    9
-                    <span className="lg-ml-1 ml-1 text-[0.875rem] text-white">
-                      件
-                    </span>
-                  </span>
-
-                  <img
-                    src="/Ramen@2x.png"
-                    alt="ramen"
-                    width={347}
-                    height={25}
-                    className="article-section__img mx-auto h-[80%] w-[80%] max-w-[347px]"
-                  />
-                </div>
-              </div>
-              <div className="article-section__info mt-6 text-right text-[0.563rem] tracking-[0.028rem] text-[#FFFFFF] lg:mt-5">
-                ※虎ノ門駅の半径1km以内
-              </div>
-            </article>
+            <Article
+              title="Let's get drunk!"
+              content={article2Content}
+              onOpenModal={openModal}
+            />
 
             {/* 3 Col */}
-            <article className="article-section__item article-section__item--3 ">
-              <div className="article-section__title">
-                <img src="/camera@2x.png" alt="camera" width={36} height={27} />
-                <span className="article-section__title-text ">
-                  フォトギャラリー
-                </span>
-              </div>
-
-              <div className="article-section__title-contents ">
-                <img
-                  src="/photo1@2x.png"
-                  alt="camera"
-                  width={338}
-                  height={310}
-                  className="article-section__title-main "
-                />
-
-                <img
-                  src="/photo2@2x.png"
-                  alt="camera"
-                  width={112}
-                  height={103}
-                  className="article-section__title-sub"
-                />
-
-                <img
-                  src="/photo3@2x.png"
-                  alt="camera"
-                  width={112}
-                  height={103}
-                  className="article-section__title-sub"
-                />
-
-                <img
-                  src="/photo4@2x.png"
-                  alt="camera"
-                  width={112}
-                  height={103}
-                  className="article-section__title-sub "
-                />
-              </div>
-            </article>
+            <Article
+              title="フォトギャラリー"
+              content={article3Content}
+              onOpenModal={openModal}
+            />
           </section>
 
           <section className="article-section__group  ">
             {/* 4 Col */}
-            <article className="article-section__item article-section__item--4 ">
-              <div className="article-section__title  ">
-                <img
-                  src="/iPhone@2x.png"
-                  alt="iphone_icon"
-                  width={19}
-                  height={26}
-                />
-                <span className="article-section__title-text ">
-                  電話・FAX番号が変わりました
-                </span>
-              </div>
-
-              <img
-                src="/tel-fax@2x.png"
-                alt="toranomon"
-                width={385}
-                height={80}
-                className="article-section__contents"
-              />
-            </article>
-
+            <Article
+              title="電話・FAX番号変更"
+              content={article4Content}
+              onOpenModal={openModal}
+            />
             {/* 5 col */}
-            <article className="article-section__item article-section__item--5 bg-white p-6 shadow-[0px_1px_1px_#D8D8D8BF] lg:h-[33.125rem]">
-              <div className="article-section__title flex items-center gap-2">
-                <img
-                  src="/Business-Graduation-cap-icon@2x.png"
-                  alt="Graduation_cap"
-                  width={44}
-                  height={30}
-                />
-                <span className="article-section__title-text text-[1.125rem] lg:text-[1.375rem]">
-                  虎ノ門の由来って？
-                </span>
-              </div>
-
-              <img
-                src="/photo@2x.png"
-                alt="photo"
-                width={450}
-                height={320}
-                className="article-section__contents-img mx-auto pt-4"
-              />
-              <span className="article-section__contents-text block pt-8 text-[0.675rem] leading-[1.25rem] lg:text-[0.8rem]">
-                虎ノ門駅を出てすぐ、
-                <br className="lg-hidden" />
-                虎ノ門交差点付近に鎮座するこの銅像。
-                <br />
-                これ、なんだかお分かりでしょうか？ <br />
-                そう、猫です。というのは嘘で予想どおり、
-                <br className="lg-hidden" /> 虎です(笑) <br />
-                虎ノ門だけに虎の銅像なんです！ <br />
-                そもそもどうして、
-                <br className="lg-hidden" />
-                ここの地名が「虎ノ門」なのか気になりませんか？
-              </span>
-            </article>
-
+            <Article
+              title="虎ノ門の由来って？"
+              content={article5Content}
+              onOpenModal={openModal}
+            />
             {/* 6 col */}
-            <article className="article-section__item article-section__item--6">
-              <img
-                src="/Pick up foods@2x.png"
-                alt="food"
-                width={253}
-                height={42}
-                className="article-section__title"
-              />
-              <div className="article-section__contents">
-                <img
-                  src="/ramen-photo@2x.png"
-                  alt="ramen-photo"
-                  width={161}
-                  height={204}
-                  className="article-section__contents-img"
-                />
-                <div className="article-section__contents-container ">
-                  <span className="article-section__contents-text1">
-                    めん徳　二代目つじ田　
-                    <br className="block md-hidden" />
-                    新橋店
-                    <br className="hidden xl-block" />
-                  </span>
-
-                  <span className="article-section__contents-text2">
-                    1月24日にオープンしたばかりのラーメン店。
-                    <br />
-                    看板メニューのつけ麺は3段階に進化します。 <br />
-                    最初はそのまま、途中ですだちを絞って爽やかに、 <br />
-                    最後は黒七味をかけてピリっとした風味を楽しんだ <br />
-                    ところで美味しく完食…。といった流れです。
-                    <br className="hidden xl-block" />
-                  </span>
-
-                  <span className="article-section__contents-text2">
-                    弊社スタッフ達も、
-                    <br className="" />
-                    頻繁に出没しそうな予感がして います。
-                  </span>
-                </div>
-              </div>
-            </article>
+            <Article
+              title="Pick Up Foods"
+              content={article6Content}
+              onOpenModal={openModal}
+            />
           </section>
         </section>
 
@@ -322,6 +375,10 @@ function Home() {
           </Link>
         </section>
       </main>
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        {modalContent}
+      </Modal>
       <Footer />
     </>
   );

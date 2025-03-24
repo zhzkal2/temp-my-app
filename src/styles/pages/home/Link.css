@@ -23,6 +23,11 @@
   background-repeat: no-repeat;
   padding-right: 1rem;
   box-shadow: 0px 1px 1px rgba(216, 216, 216, 0.75);
+
+  text-decoration-line: none;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .section-link__button-box {

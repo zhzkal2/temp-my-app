@@ -29,9 +29,6 @@
   }
 }
 
-/* TODO : .article-section__item--4 .article-section__title */
-/* 이러한 방식으로 적용할 필요성 */
-
 /* Flex_Item */
 .article-section__item {
   padding: 1rem;
@@ -77,7 +74,10 @@
 .article-section__item--2 {
   height: 19.375rem;
   background-color: #dc5e48;
-  padding: 1rem;
+  padding-top: 1.3625rem;
+  padding-right: 2.25rem;
+  padding-left: 2.25rem;
+  padding-bottom: 0.5625rem;
 }
 
 .article-section__item--2 .article-section__title {
@@ -89,30 +89,49 @@
   align-items: center;
   justify-content: center;
 }
-.article-section__item--2 .article-section__container {
+.article-section__item--2 .article-section__contents {
+  margin-top: 2.21875rem;
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
 }
 
-.article-section__item--2 .article-section__subtitle {
+.article-section__item--2 .article-section__subtitle--1 {
   font-size: 0.75rem;
   line-height: 1.0625rem;
   color: white;
   letter-spacing: 0rem;
-  margin-top: 1.5rem;
 }
 
-.article-section__item--2 .article-section__beer {
+.article-section__item--2 .article-section__subtitle--2 {
+  font-size: 0.75rem;
+  line-height: 1.0625rem;
+  color: white;
+  letter-spacing: 0rem;
+  margin-top: 1.75rem;
+}
+
+.article-section__item--2 .article-section__container {
   display: flex;
   flex-direction: row;
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
+  margin-top: 0.5625rem;
 }
+
 .article-section__item--2 .article-section__text {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 0.25rem;
+  font-size: 1.88rem;
+  line-height: 1.6rem;
+  color: white;
+}
+
+.article-section__item--2 .article-section__unit {
   font-size: 0.875rem;
-  line-height: 1;
+  line-height: 1.03125rem;
   letter-spacing: 0rem;
   color: white;
 }
@@ -124,19 +143,11 @@
   max-width: 21.875rem;
 }
 
-.article-section__item--2 .article-section__test-text {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  gap: 0.25rem;
-  font-size: 2.25rem;
-  color: white;
-}
-
 .article-section__item--2 .article-section__info {
   margin-top: 1.5rem;
   text-align: right;
-  font-size: 0.563rem;
+  font-size: 0.5625rem;
+  line-height: 1.03125rem;
   color: white;
   letter-spacing: 0.028rem;
 }
@@ -255,7 +266,7 @@
 
 .article-section__item--6 .article-section__contents {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
@@ -282,6 +293,7 @@
   margin-top: 1rem;
   font-size: 0.725rem;
   letter-spacing: -0.01875rem;
+  line-height: 1.25rem;
   color: white;
 }
 
@@ -302,15 +314,6 @@
     margin-top: 0.75rem;
     height: 100%;
     width: 100%;
-  }
-  .article-section__item--2 {
-    padding-top: 1.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-bottom: 0.5rem;
-  }
-  .article-section__item--2 .article-section__test-text {
-    gap: 0.5rem;
   }
 
   .article-section__item--2 .article-section__info {
