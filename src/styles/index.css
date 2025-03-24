@@ -3,12 +3,12 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* 폰트 설정 */
+  /* Font */
   --font-sans: Arial, Helvetica, sans-serif;
   --font-mono: "Courier New", Courier, monospace;
 }
 
-/* 기본 스타일 설정 */
+/* base */
 body {
   background-color: var(--background);
   color: var(--foreground);
@@ -16,4 +16,9 @@ body {
   margin: 0;
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
+}
+
+/* a style remove */
+a:-webkit-any-link {
+  all: unset;
 }
