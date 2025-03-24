@@ -208,7 +208,8 @@
 
 .article-section__item--4 .article-section__title-text {
   text-align: center;
-  font-size: 0.95rem;
+  font-size: 1.375rem;
+  line-height: 1.129375rem;
   color: white;
 }
 
@@ -328,9 +329,6 @@
   }
   .article-section__item--4 {
     height: 13.75rem;
-  }
-  .article-section__item--4 .article-section__title-text {
-    font-size: 1.375rem;
   }
   .article-section__item--5 {
     height: 33.125rem;
