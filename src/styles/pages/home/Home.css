@@ -42,7 +42,6 @@ main {
   }
 }
 
-/* md:hidden (768px 미만에서 숨김) */
 @media (min-width: 48rem) {
   .md-hidden {
     display: none;
@@ -52,7 +51,6 @@ main {
   }
 }
 
-/* lg:hidden (1024px 미만에서 숨김) */
 @media (min-width: 64rem) {
   .lg-hidden {
     display: none;
