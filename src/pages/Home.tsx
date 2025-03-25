@@ -256,7 +256,7 @@ function Home() {
             src="/main-v@2x.png"
             alt="toranomon"
             width={1000}
-            height={500}
+            height={590}
           />
           <div className="section-title__overlay">
             <img
@@ -313,6 +313,7 @@ function Home() {
             />
 
             {/* 3 Col */}
+            {/* TODO : Image album */}
             <Article
               title="フォトギャラリー"
               content={article3Content}
