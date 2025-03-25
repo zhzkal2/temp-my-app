@@ -9,7 +9,7 @@ import Modal from "../Components/Modal";
 
 import "../styles/pages/home/Home.css";
 import "../styles/pages/home/SubTitle.css";
-import "../styles/pages/Home/Link.css";
+import "../styles/pages/home/Link.css";
 import "../styles/pages/home/Title.css";
 import "../styles/pages/home/Article.css";
 
