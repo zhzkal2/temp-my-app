@@ -7,7 +7,7 @@ interface ArticleProps {
   onOpenModal: (content: React.ReactNode) => void;
 }
 
-const Article: React.FC<ArticleProps> = ({ title, content, onOpenModal }) => {
+const Article: React.FC<ArticleProps> = ({ content, onOpenModal }) => {
   return <div onClick={() => onOpenModal(content)}>{content}</div>;
 };
 

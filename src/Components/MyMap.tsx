@@ -33,15 +33,9 @@ export default function MyMap(props: MyMapProps) {
             streetViewControl: false,
             rotateControl: false,
           }}
+          aria-label="Interactive map showing a location in Toranomon Office"
         >
           <Marker position={center} aria-label="Map center marker" />
-          {/* Assuming zoom controls are exposed, you can add aria-labels */}
-          <div role="button" aria-label="Zoom in" className="zoom-in-button">
-            {/* Your Zoom In button code */}
-          </div>
-          <div role="button" aria-label="Zoom out" className="zoom-out-button">
-            {/* Your Zoom Out button code */}
-          </div>
         </GoogleMap>
       </LoadScript>
     </div>
