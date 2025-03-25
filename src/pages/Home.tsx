@@ -1,11 +1,13 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import Header from "../Components/Header";
 import Footer from "../Components/Footer";
 import MyMap from "../Components/MyMap";
 import Article from "../Components/Article";
 import Modal from "../Components/Modal";
+import Preloader from "../Components/Preloader";
 
 import "../styles/pages/home/Home.css";
 import "../styles/pages/home/SubTitle.css";
@@ -16,6 +18,14 @@ import "../styles/pages/home/Article.css";
 function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState<React.ReactNode>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const openModal = useCallback((content: React.ReactNode) => {
     setModalContent(content);
@@ -111,7 +121,7 @@ function Home() {
       <div className="article-section__title-contents ">
         <img
           src="/photo1@2x.png"
-          alt="camera"
+          alt="tranomon photo1"
           width={338}
           height={310}
           className="article-section__title-main "
@@ -119,7 +129,7 @@ function Home() {
 
         <img
           src="/photo2@2x.png"
-          alt="camera"
+          alt="tranomon photo2"
           width={112}
           height={103}
           className="article-section__title-sub"
@@ -127,7 +137,7 @@ function Home() {
 
         <img
           src="/photo3@2x.png"
-          alt="camera"
+          alt="tranomon photo3"
           width={112}
           height={103}
           className="article-section__title-sub"
@@ -135,7 +145,7 @@ function Home() {
 
         <img
           src="/photo4@2x.png"
-          alt="camera"
+          alt="tranomon photo4"
           width={112}
           height={103}
           className="article-section__title-sub "
@@ -177,7 +187,7 @@ function Home() {
 
       <img
         src="/photo@2x.png"
-        alt="photo"
+        alt="tranomon photo5"
         width={450}
         height={320}
         className="article-section__contents-img "
@@ -244,143 +254,169 @@ function Home() {
     </article>
   );
 
+  const contentVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
-      {/* Header */}
-      <Header />
-      <main>
-        {/* Title Section */}
-        <section className="section-title ">
-          <img
-            className="section-title__img"
-            src="/main-v@2x.png"
-            alt="toranomon"
-            width={1000}
-            height={590}
-          />
-          <div className="section-title__overlay">
-            <img
-              src="/Hello,TORANOMON@2x.png"
-              alt="toranomon"
-              width={642}
-              height={61}
-              className="section-title__overlay-img"
-            />
-
-            <h2>東京オフィスは、虎ノ門にて新しいスタートを切ります</h2>
-          </div>
-        </section>
-
-        {/* Sub Title Section */}
-        <section className="section-subtitle">
-          <article className="section-subtitle__typo">
-            <img
-              className="responsive-image"
-              src="/We just moved toTORANOMON4th March 2014@2x.png"
-              alt="toranomon"
-              width={500}
-              height={500}
-            />
-          </article>
-
-          <article className="section-subtitle__text">
-            <p className="section-subtitle__text-p">
-              このたび弊社は、東京オフィスを東京都港区虎ノ門に移転し
-              ２０１４年３月４日(火)大安より営業の運びとなりました。
-              新オフィスは、打ち合わせスペースも多くありますので
-              お近くにお越しの際はどうぞお気軽にお立ち寄りください。
-              今後とも弊社をどうぞよろしくお願い申し上げます。
-            </p>
-          </article>
-        </section>
-
-        {/* Article Section */}
-
-        <section className="article-section">
-          <section className="article-section__group">
-            {/* 1 Col */}
-            <Article
-              title="新東京オフィスの地図はこちら"
-              content={article1Content}
-              onOpenModal={openModal}
-            />
-
-            {/* 2 Col */}
-            <Article
-              title="Let's get drunk!"
-              content={article2Content}
-              onOpenModal={openModal}
-            />
-
-            {/* 3 Col */}
-            {/* TODO : Image album */}
-            <Article
-              title="フォトギャラリー"
-              content={article3Content}
-              onOpenModal={openModal}
-            />
-          </section>
-
-          <section className="article-section__group  ">
-            {/* 4 Col */}
-            <Article
-              title="電話・FAX番号変更"
-              content={article4Content}
-              onOpenModal={openModal}
-            />
-            {/* 5 col */}
-            <Article
-              title="虎ノ門の由来って？"
-              content={article5Content}
-              onOpenModal={openModal}
-            />
-            {/* 6 col */}
-            <Article
-              title="Pick Up Foods"
-              content={article6Content}
-              onOpenModal={openModal}
-            />
-          </section>
-        </section>
-
-        {/* Link Section */}
-        <section className="section-link">
-          <p className="section-link__text">
-            新しくなった東京オフィスへ <br className="sm-hidden" />
-            ぜひお越しください。
-          </p>
-          <Link to="https://ankh-systems.co.jp/">
-            <div className="section-link__button">
-              <div className="section-link__button-box">
+      <div
+        className={loading ? "preloader-overlay" : ""}
+        role="presentation"
+        aria-hidden={loading}
+      >
+        {loading && <Preloader />}
+        {!loading && (
+          <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Header */}
+            <Header />
+            <main>
+              {/* Title Section */}
+              <section className="section-title ">
                 <img
-                  src="/green_logo@2x.png"
-                  alt="AnkhSystems"
-                  width={328}
-                  height={36}
-                  className="section-link__button-box-img"
+                  className="section-title__img"
+                  src="/main-v@2x.png"
+                  alt="toranomon"
+                  width={1000}
+                  height={590}
                 />
-                <p className="hidden sm-block section-link__button-text">
-                  株式会社アンクシステムズ
-                  <br className="hidden sm-block lg-hidden" />
-                  コーポレートサイトへ
+                <div className="section-title__overlay">
+                  <img
+                    src="/Hello,TORANOMON@2x.png"
+                    alt="toranomon"
+                    width={642}
+                    height={61}
+                    className="section-title__overlay-img"
+                  />
+
+                  <h2>東京オフィスは、虎ノ門にて新しいスタートを切ります</h2>
+                </div>
+              </section>
+
+              {/* Sub Title Section */}
+              <section className="section-subtitle">
+                <article className="section-subtitle__typo">
+                  <img
+                    className="responsive-image"
+                    src="/We just moved toTORANOMON4th March 2014@2x.png"
+                    alt="toranomon"
+                    width={500}
+                    height={500}
+                  />
+                </article>
+
+                <article className="section-subtitle__text">
+                  <p className="section-subtitle__text-p">
+                    このたび弊社は、東京オフィスを東京都港区虎ノ門に移転し
+                    ２０１４年３月４日(火)大安より営業の運びとなりました。
+                    新オフィスは、打ち合わせスペースも多くありますので
+                    お近くにお越しの際はどうぞお気軽にお立ち寄りください。
+                    今後とも弊社をどうぞよろしくお願い申し上げます。
+                  </p>
+                </article>
+              </section>
+
+              {/* Article Section */}
+
+              <section className="article-section">
+                <section className="article-section__group">
+                  {/* 1 Col */}
+                  <Article
+                    title="新東京オフィスの地図はこちら"
+                    content={article1Content}
+                    onOpenModal={openModal}
+                  />
+
+                  {/* 2 Col */}
+                  <Article
+                    title="Let's get drunk!"
+                    content={article2Content}
+                    onOpenModal={openModal}
+                  />
+
+                  {/* 3 Col */}
+                  {/* TODO : Image album */}
+                  <Article
+                    title="フォトギャラリー"
+                    content={article3Content}
+                    onOpenModal={openModal}
+                  />
+                </section>
+
+                <section className="article-section__group  ">
+                  {/* 4 Col */}
+                  <Article
+                    title="電話・FAX番号変更"
+                    content={article4Content}
+                    onOpenModal={openModal}
+                  />
+                  {/* 5 col */}
+                  <Article
+                    title="虎ノ門の由来って？"
+                    content={article5Content}
+                    onOpenModal={openModal}
+                  />
+                  {/* 6 col */}
+                  <Article
+                    title="Pick Up Foods"
+                    content={article6Content}
+                    onOpenModal={openModal}
+                  />
+                </section>
+              </section>
+
+              {/* Link Section */}
+              <section className="section-link">
+                <p className="section-link__text">
+                  新しくなった東京オフィスへ <br className="sm-hidden" />
+                  ぜひお越しください。
                 </p>
-              </div>
-              <img
-                src="/arrow@2x.png"
-                alt="arrow"
-                width={6}
-                height={11}
-                className="section-link__button-arrow "
-              />
-            </div>
-          </Link>
-        </section>
-      </main>
-      {/* Modal */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        {modalContent}
-      </Modal>
-      <Footer />
+                <Link to="https://ankh-systems.co.jp/">
+                  <div className="section-link__button">
+                    <div className="section-link__button-box">
+                      <img
+                        src="/green_logo@2x.png"
+                        alt="AnkhSystems"
+                        width={328}
+                        height={36}
+                        className="section-link__button-box-img"
+                      />
+                      <p className="hidden sm-block section-link__button-text">
+                        株式会社アンクシステムズ
+                        <br className="hidden sm-block lg-hidden" />
+                        コーポレートサイトへ
+                      </p>
+                    </div>
+                    <img
+                      src="/arrow@2x.png"
+                      alt="arrow"
+                      width={6}
+                      height={11}
+                      className="section-link__button-arrow "
+                    />
+                  </div>
+                </Link>
+              </section>
+            </main>
+            {/* Modal */}
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+              {modalContent}
+            </Modal>
+            <Footer />
+          </motion.div>
+        )}
+      </div>
     </>
   );
 }
