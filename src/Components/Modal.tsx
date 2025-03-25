@@ -1,11 +1,6 @@
 import React, { useCallback } from "react";
+import { ModalProps } from "../types/Modal";
 import { X } from "lucide-react";
-
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  children: React.ReactNode;
-}
 
 // TODO : modal 動的な動き
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
