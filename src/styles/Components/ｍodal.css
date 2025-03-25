@@ -36,6 +36,7 @@
 
 .modal-section .article-section__item {
   box-shadow: none;
+  cursor: default;
 }
 
 @media (min-width: 30rem) {
